@@ -1,94 +1,70 @@
+# Getting Started with Create React App
 
-# My Finance App
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project was created as a conclusion of React module during the Ironhack Web Development Bootcamp in June, 2022. 
+## Available Scripts
 
-The main objective of the My Finance app is to help user better track personal expenses in the daily life.
+In the project directory, you can run:
 
+### `npm start`
 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## Table of Contents
+### `npm test`
 
-* [Project Workflow](#project-workflow)
-* [Tech Stack](#tech)
-* [API Reference](#api-reference)
-* [Screenshots](#screenshots)
-* [Project Status](#project-status)
-* [Room for Improvement](#room-for-improvement)
-* [Project presentation](#project-presentation)
-* [About Us](#about-us)
-## Project Workflow
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### 1. Product definition, research and analysis
+### `npm run build`
 
-During this phase we set the product value propositions which helped us to define the future app functionality. Based on this, 9 user stories, an app basic structure and the wireframes have been created (using Miro and Figma). 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-![User Stories](https://via.placeholder.com/468x300?text=User+Stories)
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-![App basic structure](https://via.placeholder.com/468x300?text=App+basic+structure)
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-![Wireframe - SignUp Page](https://via.placeholder.com/468x300?text=Wireframe+-+SignUp+Page)
+### `npm run eject`
 
-![Wireframe - Homepage](https://via.placeholder.com/468x300?text=Wireframe+-+Homepage)
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-![Wireframe - About Page](https://via.placeholder.com/468x300?text=Wireframe+-+About+Page)
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### 2. Development phase
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-### 3. Delivery
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-The project delivery happened on July, 2nd, 2022 in form of presentation to the Lead Teacher [Nilton de Freitas](https://github.com/oniltos) and Teacher Assistant [Felipe Osório](https://github.com/Briofita09).
+## Learn More
 
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Tech Stack
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-**???:** HTML, CSS, JavaScript
+### Code Splitting
 
-**Client:** React
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-**Server:** Node
+### Analyzing the Bundle Size
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-## API Reference
+### Making a Progressive Web App
 
-#### Get all items
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-```http
-  GET /api/items
-```
+### Advanced Configuration
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-#### Get item
+### Deployment
 
-```http
-  GET /api/items/${id}
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
+### `npm run build` fails to minify
 
-#### add(num1, num2)
-
-Takes two numbers and returns the sum.
-
-
-## Screenshots
-
-
-
-## Project Status
- 
- _work in progress_
-## Room for Improvement
-## Project Presentation
-
-[Click here](link) to watch the project presentation!
-## 🚀 About Us
-- [Bruno Novis](https://www.github.com/bru9is) - engineer with more than 10 years of experience in the technology area. At the moment in career transition to Software Development. 
-- [Ksenia Busquet](https://www.github.com/kseniabusquet) - customer-oriented specialist with excellent communication and interpersonal skills. Passionate about helping people solve complex issues. Currently transitioning into Software Development. Twice an expat.
-
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
