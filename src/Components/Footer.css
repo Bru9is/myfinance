@@ -1,0 +1,32 @@
+.image-footer {
+    width: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-image {
+    width: 100%;
+}
+
+.wrapper-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*position: fixed;*/
+    padding: 10px 10px 0px 0px;
+    bottom: 0;
+    width: 99%;
+    height: 100px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: rgba(0, 0, 0, 0.8);
+    background-color:white;
+}
+
+.made-with-love {
+    width: 100%;
+    padding-top: 20px;
+    text-align: center;
+    border-top: 2px solid rgba(0, 0, 0, 0.25);
+}
