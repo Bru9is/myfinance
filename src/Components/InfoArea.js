@@ -7,16 +7,16 @@ import ItemCard from "./ItemCard";
 
 
 export default function InfoArea() {
-  const [info, setInfo] = useState({});
+  const [info, setInfo] = useState();
   const [refresh, setRefresh] = useState(true);
-
+    
   useEffect(() => {
-    console.log("qualquer coisa")
+    
     axios
       .get("http://ironrest.herokuapp.com/myFinance")
-      .then((response) => console.log(response.data))
+      .then((response) => setInfo(response.data))
       .catch((err) => console.log(err));
-  }, []);
+  }, [refresh]);
 
   function deleteItem(_id) {
     axios
@@ -24,7 +24,10 @@ export default function InfoArea() {
       .then(() => setRefresh(!refresh))
       .catch((e) => console.log(e));
   }
-  console.log(info)
+  if (!info){
+    return <h1></h1>
+  }
+  
   return (
     <div className="Items">
       <div className="item-header">
