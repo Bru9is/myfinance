@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<InfoArea />} />
-        <Route path="/input-area" element={<InputArea />} />
-        <Route path="/:id" element={<ResumeItem />} />
+        <Route path="/new-item" element={<InputArea />} />
+        
       </Routes>
     </div>
   );

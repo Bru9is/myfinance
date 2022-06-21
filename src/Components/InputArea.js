@@ -5,7 +5,7 @@ import axios from 'axios';
 export default function InputArea(props) {
   const [title, setTitle] = useState("");
   const [value, setValue] = useState("");
-  const [date, setDate] = useState(date);
+  const [date, setDate] = useState(null);
   const [category, setCategory] = useState("");
 
   const data = {
@@ -43,6 +43,7 @@ export default function InputArea(props) {
         />
         <label htmlFor="date">Date</label>
         <input
+          type="date"
           value={date}
           name={date}
           placeholder="Date"

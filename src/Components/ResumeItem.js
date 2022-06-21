@@ -15,8 +15,7 @@ export default function ResumeItem() {
       .catch((err) => console.log(err));
   }, []);
 
-  
-
+   
   return (
     <div>
       <h1 className="item">items Selected</h1>
