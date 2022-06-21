@@ -1,25 +1,62 @@
-import ReactDOM from 'react-dom'
-import { FaAngleLeft } from "react-icons/fa";
-import { FaAngleRight } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { FaInfoCircle, FaUserEdit, FaRegTrashAlt } from "react-icons/fa";
+
+import ItemCard from "./ItemCard";
 
 
-function InfoArea(){
+export default function InfoArea() {
+  const [info, setInfo] = useState();
+  const [refresh, setRefresh] = useState(true);
+    
+  useEffect(() => {
+    
+    axios
+      .get("http://ironrest.herokuapp.com/myFinance")
+      .then((response) => setInfo(response.data))
+      .catch((err) => console.log(err));
+  }, [refresh]);
 
-    return (
-        <div>
-            <FaAngleLeft 
-                size={25} weight="bold" 
-                icon="fa-solid fa-caret-left" 
-                />
-                
-                <span>Current Month</span>
-
-                <FaAngleRight 
-                size={25} weight="bold" 
-                icon="fa-solid fa-caret-right" 
-                />
-        </div>
-    )
+  function deleteItem(_id) {
+    axios
+      .delete(`http://ironrest.herokuapp.com/myFinance/${_id}`)
+      .then(() => setRefresh(!refresh))
+      .catch((e) => console.log(e));
+  }
+  if (!info){
+    return <h1></h1>
+  }
+  
+  return (
+    <div className="Items">
+      <div className="item-header">
+        <div></div>
+        <h1>Item List</h1>
+        <Link to={"/new-item"}>
+          <p>New Item</p>
+        </Link>
+      </div>
+      {info.map((item) => {
+        return (
+          <div className="items-list">
+            <ItemCard
+              key={item._id}
+              title={item.title}
+              value={item.value}
+              data={item.data}
+              category={item.category}
+            />
+            <Link to={`/${item._id}`}>
+              <FaInfoCircle />
+            </Link>
+            <Link to={`/edit-item/${item._id}`}>
+              <FaUserEdit />
+            </Link>
+            <FaRegTrashAlt onClick={() => deleteItem(item._id)} />
+            </div>
+        );
+      })}
+    </div>
+  );
 }
-
-export default InfoArea
