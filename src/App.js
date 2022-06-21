@@ -1,18 +1,17 @@
 import './App.css';
-import Header from './Components/Header.js';
-import Footer from './Components/Footer.js';
-import InfoArea from './Components/InfoArea';
+import { Routes, Route } from "react-router-dom";
 import InputArea from './Components/InputArea';
 import ResumeItem from './Components/ResumeItem';
-import SignUp from './Components/SignUp';
-import TableItem from './Components/TableItem';
-import TableArea from './Components/TableArea';
-import ThemeSwitcher from './Components/ThemeSwitcher';
+import InfoArea from './Components/InfoArea';
 
 function App() {
   return (
     <div className="App">
-      
+      <Routes>
+        <Route path="/" element={<InfoArea />} />
+        <Route path="/input-area" element={<InputArea />} />
+        <Route path="/:id" element={<ResumeItem />} />
+      </Routes>
     </div>
   );
 }

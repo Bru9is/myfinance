@@ -1,66 +1,62 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-function InputArea(){
-    const [title, setTitle] = useState('');
-    const [category, setCategory] = useState('');
-    const [value, setValue] = useState('');
-    const [date, setDate] = useState('');
 
-    const handleAddEvent = () => {
-        let newItem = {
-            date: new Date(date),
-            category: category,
-            title: title,
-            value: parseInt(value)
-        }
+export default function InputArea(props) {
+  const [title, setTitle] = useState("");
+  const [value, setValue] = useState("");
+  const [date, setDate] = useState(date);
+  const [category, setCategory] = useState("");
 
-        setCategory('');
-        setTitle('');
-        setValue('');
-        setDate('');
-        onAdd(newItem); //change to CRUD?
-    }
-    
-    return (
-        <div>
-            <input 
-                type='search' 
-                value={title} 
-                onChange={e => setTitle(e.target.value)} 
-                className='inputText' 
-                placeholder= "Type in an operation you'd like to add" />
+  const data = {
+    title,
+    value,
+    date,
+    category,
+  }
 
-            <input 
-                type='text' 
-                value={value} 
-                onChange={e => setValue(e.target.value)} 
-                className='inputNumber' 
-                placeholder='Value'/>
+  function handleSubmit(e) {
+    e.preventDefault();
+    axios
+        .post('http://ironrest.herokuapp.com/myFinance', data)
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));
+  }
 
-            <input 
-                type='date' 
-                className='inputDate' 
-                value={date} 
-                onChange={e => setDate(e.target.value)} />
-
-            <select value={category} defaultValue={category} onChange={e => setCategory(e.target.value)} >
-
-                <option className='option' hidden value={''}>Category</option>
-                <option className='option' value={'salary'}>Salary</option>
-                <option className='option' value={'food'}>Food</option>
-                <option className='option' value={'rent'}>Rent</option>
-                <option className='option' value={'clothes'}>Clothes</option>
-                <option className='option' value={'profit'}>Profits</option>
-                <option className='option' value={'vehicle'}>Vehicles</option>
-                <option className='option' value={'tax'}>Taxes</option>
-                <option className='option' value={'investments'}>Investments</option>
-                <option className='option' value={'services'}>Services</option>
-                
-            </select>
-
-            <button onClick={handleAddEvent}>Add</button>
-        </div>
-    )
+  return (
+    <div>
+      <h1 className="new-input">New Input</h1>
+      <form className="new-input" onSubmit={handleSubmit}>
+        <label htmlFor="title">Title</label>
+        <input
+          value={title}
+          name={title}
+          placeholder="Title"
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <label htmlFor="value">Value</label>
+        <input
+          value={value}
+          name={value}
+          placeholder="Value"
+          onChange={(e) => setValue(e.target.value)}
+        />
+        <label htmlFor="date">Date</label>
+        <input
+          value={date}
+          name={date}
+          placeholder="Date"
+          onChange={(e) => setDate(e.target.value)}
+        />
+        <label htmlFor="category">Category</label>
+        <input
+          value={category}
+          name={category}
+          placeholder="Category"
+          onChange={(e) => setCategory(e.target.value)}
+        />
+        <button type="submit">Add Item</button>
+      </form>
+    </div>
+  )
 }
-
-export default InputArea
