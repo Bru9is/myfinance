@@ -2,6 +2,7 @@ import React from 'react';
 import {  Link } from "react-router-dom";
 import logo from '../assets/images/my-finance-logo.png';
 import './Navbar.css';
+import ThemeSwitcher from './ThemeSwitcher'
 
 
 function Navbar(){
@@ -20,7 +21,7 @@ function Navbar(){
             <Link to="/">Sign Up</Link>
           </button>
           
-          
+          <ThemeSwitcher />
           </div>
       </div>
       )

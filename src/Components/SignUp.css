@@ -13,7 +13,6 @@
 }
 
 .signup-container {
-    padding-top: 65px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

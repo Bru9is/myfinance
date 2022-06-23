@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaInfoCircle, FaUserEdit, FaRegTrashAlt } from "react-icons/fa";
 
 import ItemCard from "./ItemCard";
-
+import './InfoArea.css'
 
 export default function InfoArea() {
   const [info, setInfo] = useState();
@@ -29,31 +29,34 @@ export default function InfoArea() {
   }
   
   return (
-    <div className="Items">
+    <div className="items">
+        
+        {/*<Link to={"/new-item"}>
+          <p>+ Item</p>
+          </Link>*/}
+
       <div className="item-header">
-        <div></div>
-        <h1>Item List</h1>
-        <Link to={"/new-item"}>
-          <p>New Item</p>
-        </Link>
+        <div className="items-list">
+          <span className="span"><b>Date</b></span>
+          <span className="span"><b>Category</b></span>
+          <span className="span"><b>Title</b></span>
+          <span className="span"><b>Value</b></span>
+        </div>
       </div>
       {info.map((item) => {
         return (
           <div className="items-list">
             <ItemCard
               key={item._id}
-              title={item.title}
-              value={item.value}
               data={item.data}
               category={item.category}
+              title={item.title}
+              value={item.value}
             />
-            <Link to={`/${item._id}`}>
-              <FaInfoCircle />
-            </Link>
             <Link to={`/edit-item/${item._id}`}>
-              <FaUserEdit />
+              <FaUserEdit size={20} style={{ fill: '#F5793B' }}/>
             </Link>
-            <FaRegTrashAlt onClick={() => deleteItem(item._id)} />
+            <FaRegTrashAlt size={20} style={{ fill: '#F5793B', cursor: "pointer" }} onClick={() => deleteItem(item._id)} />
             </div>
         );
       })}
