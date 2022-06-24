@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function EditArea() {
     const [title, setTitle] = useState("");
@@ -9,30 +10,33 @@ export default function EditArea() {
     const [category, setCategory] = useState("");
     const [info, setInfo] = useState({ title, value, date, category });
 
-    const data = {
-     title,
-     value,
-     date,
-     category,
-    }
-
   const { id } = useParams();
 
   useEffect(() => {
     axios
-      .get(`http://ironrest.herokuapp.com/myFinance/${_id}`)
+      .get(`http://ironrest.herokuapp.com/myFinance/${id}`)
       .then((response) => {
         setInfo(response.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [id]);
+
+  let navigate = useNavigate();
 
   function handleSubmit(e) {
+    const data = {
+      title: info.title,
+      value: info.value,
+      date: info.date,
+      category: info.category,
+     }
+
     e.preventDefault();
     axios
-      .put(`http://ironrest.herokuapp.com/myFinance/${_id}`, info)
+      .put(`http://ironrest.herokuapp.com/myFinance/${id}`, data)
       .then((response) => alert("Item successfully updated!"))
       .catch((err) => console.log(err));
+    navigate("/homepage")
   }
 
   return (

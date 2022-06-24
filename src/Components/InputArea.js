@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './InputArea.css'
-
+import { useNavigate } from "react-router-dom";
 
 export default function InputArea(props) {
   const [title, setTitle] = useState("");
@@ -15,6 +15,8 @@ export default function InputArea(props) {
     date,
     category,
   }
+
+  let navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();

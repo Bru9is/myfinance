@@ -48,7 +48,7 @@ export default function InfoArea() {
           <div className="items-list">
             <ItemCard
               key={item._id}
-              data={item.data}
+              date={item.date}
               category={item.category}
               title={item.title}
               value={item.value}
