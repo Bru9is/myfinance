@@ -6,25 +6,17 @@ import { FaInfoCircle, FaUserEdit, FaRegTrashAlt } from "react-icons/fa";
 import ItemCard from "./ItemCard";
 import './InfoArea.css'
 
-export default function InfoArea() {
-  const [info, setInfo] = useState();
+export default function InfoArea(props) {
+  
   const [refresh, setRefresh] = useState(true);
     
-  useEffect(() => {
-    
-    axios
-      .get("http://ironrest.herokuapp.com/myFinance")
-      .then((response) => setInfo(response.data))
-      .catch((err) => console.log(err));
-  }, [refresh, info]);
-
   function deleteItem(_id) {
     axios
       .delete(`http://ironrest.herokuapp.com/myFinance/${_id}`)
       .then(() => setRefresh(!refresh))
       .catch((e) => console.log(e));
   }
-  if (!info){
+  if (!props.info){
     return <h1></h1>
   }
   
@@ -38,7 +30,7 @@ export default function InfoArea() {
           <span className="span"><b>Value</b></span>
         </div>
       </div>
-      {info.map((item) => {
+      {props.info.map((item) => {
         return (
           <div className="items-list">
             <ItemCard
