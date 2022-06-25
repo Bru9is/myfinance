@@ -7,11 +7,9 @@ function Expense (props){
                 sumValue += parseInt(props.info[i].value)
             }
         }
-   
-    
     return (
         <div>
-            <span>Expense: <span style = {{color: 'red'}}>{sumValue}$</span></span>
+            <span>Expense: <span style = {{color: 'red'}}>{Math.abs(sumValue)}$</span></span>
         </div>
     )
 }
