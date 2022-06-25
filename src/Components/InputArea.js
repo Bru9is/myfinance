@@ -8,6 +8,7 @@ export default function InputArea(props) {
   const [value, setValue] = useState("");
   const [date, setDate] = useState(null);
   const [category, setCategory] = useState("");
+  const [isShown, setIsShown] = useState(false);
 
   const data = {
     title,
@@ -42,6 +43,8 @@ export default function InputArea(props) {
           value={value}
           name={value}
           placeholder="Value"
+          onMouseEnter={() => setIsShown(true)}
+          onMouseLeave={() => setIsShown(false)}
           onChange={(e) => setValue(e.target.value)}
         />
 
@@ -58,11 +61,17 @@ export default function InputArea(props) {
           value={category}
           name={category}
           placeholder="Category"
-          onChange={(e) => setCategory(e.target.value)}
+          onChange={(e) => setCategory(e.target.value.toLowerCase())}
         />
         <button className = 'add-button' type="submit">Add Item</button>
         </div>
       </form>
+
+      {isShown && (
+                  <div className = 'hidden-message'>
+                    *negative - expense, positive - income
+                  </div>
+                )}
     </div>
   )
 }
