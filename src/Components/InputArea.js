@@ -16,6 +16,7 @@ export default function InputArea(props) {
     date,
     category,
   }
+  let sumValue = 0
 
   let navigate = useNavigate();
 
@@ -23,8 +24,8 @@ export default function InputArea(props) {
     e.preventDefault();
     axios
         .post('http://ironrest.herokuapp.com/myFinance', data)
-        .then((res) => console.log(res))
         .catch((err) => console.log(err));
+    sumValue += parseInt(data.value)
   }
 
   return (
