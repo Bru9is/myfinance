@@ -16,7 +16,7 @@ export default function InfoArea() {
       .get("http://ironrest.herokuapp.com/myFinance")
       .then((response) => setInfo(response.data))
       .catch((err) => console.log(err));
-  }, [refresh]);
+  }, [refresh, info]);
 
   function deleteItem(_id) {
     axios
@@ -30,11 +30,6 @@ export default function InfoArea() {
   
   return (
     <div className="items">
-        
-        {/*<Link to={"/new-item"}>
-          <p>+ Item</p>
-          </Link>*/}
-
       <div className="item-header">
         <div className="items-list">
           <span className="span"><b>Date</b></span>

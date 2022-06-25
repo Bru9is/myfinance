@@ -22,3 +22,11 @@
 .add-button:hover {
     cursor: pointer;
 }
+
+.hidden-message {
+    font-size: 12px;
+    margin-left: -100px;
+    margin-top: -5px;
+    margin-bottom: 0px;
+    color: #F5793B;
+}

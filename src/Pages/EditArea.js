@@ -41,7 +41,7 @@ export default function EditArea() {
 
   return (
     <div>
-      <h1 className="title">Item Edition</h1>
+      <h1 className="title">Edit item info</h1>
       <form className="item-creation" onSubmit={handleSubmit}>
         <label htmlFor="title">Title</label>
         <input
@@ -73,7 +73,7 @@ export default function EditArea() {
           placeholder="category"
           onChange={(e) => setInfo({ ...info, category: e.target.value })}
         />
-        <button type="submit">Confirmar</button>
+        <button type="submit">Confirm</button>
       </form>
     </div>
   );
