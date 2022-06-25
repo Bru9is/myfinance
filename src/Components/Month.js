@@ -1,12 +1,31 @@
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 import './Month.css'
+import { useState } from 'react'
 
-function Month () {
+
+function Month (props) {
+
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+    const handleLeft = () => {
+        if (props.currentMonth > 0) {
+            let newMonth = props.currentMonth-1
+            props.filterMonth(newMonth)
+        }
+    }
+
+    const handleRight = () => {
+        if (props.currentMonth < 11 ) {
+            let newMonth = props.currentMonth+1
+            props.filterMonth(newMonth)
+        }
+    }
+
     return (
         <div className = 'month-area'>
-            <FaAngleLeft size={25} style={{ fill: '#F5793B', cursor: "pointer" }}/>
-            <span>June</span>
-            <FaAngleRight size={25} style={{ fill: '#F5793B', cursor: "pointer" }}/>
+            <FaAngleLeft onClick = {handleLeft} size={25} style={{ fill: '#F5793B', cursor: "pointer" }}/>
+            <span>{months[props.currentMonth]}</span>
+            <FaAngleRight onClick = {handleRight} size={25} style={{ fill: '#F5793B', cursor: "pointer" }}/>
         </div>
     )
 }

@@ -11,8 +11,32 @@ import axios from "axios";
 import './Homepage.css'
 
 function HomePage() {
-  const [info, setInfo] = useState();
+  const actualMonth = new Date().getMonth();
+ 
+  const [info, setInfo] = useState([]);
   const [refresh, setRefresh] = useState(true);
+  const [filteredInfo, setFilteredInfo] = useState(info)
+  const [month, setMonth] = useState(actualMonth)
+
+
+  useEffect(() => {
+        const filteredData = info.filter((current) => {
+          const parts = current.date.split('-')
+          let myDate = new Date(parts[0], parts[1] - 1, parts[2])
+          return myDate.getMonth() === month
+      })
+      setFilteredInfo(filteredData) 
+      console.log('Use effect check', month, info, filteredData)
+
+  }, [info, month])
+
+  const filterMonth = (month) => { 
+    setMonth(month)  
+  }
+
+  const triggerRefresh = () => {
+    setRefresh(!refresh)
+  }
 
   useEffect(() => {
     
@@ -20,8 +44,8 @@ function HomePage() {
       .get("http://ironrest.herokuapp.com/myFinance")
       .then((response) => setInfo(response.data))
       .catch((err) => console.log(err));
-  }, [refresh, info]);
-  
+  }, [refresh]);
+
   if (!info) {
     return <h1>Loading...</h1>;
   }
@@ -29,14 +53,14 @@ function HomePage() {
     <div className="Homepage">
       <Navbar />
       <div className = 'info-area' >
-        <Month />
-        <Income info = { info }/>
-        <Expense info = { info }/>
-        <Remaining info = { info }/>
+        <Month filterMonth = {filterMonth} info = { filteredInfo } currentMonth = {month}/>
+        <Income info = { filteredInfo }/>
+        <Expense info = { filteredInfo }/>
+        <Remaining info = { filteredInfo }/>
       </div>
 
-        <InputArea />
-        <InfoArea info = { info }/>
+        <InputArea triggerRefresh = {triggerRefresh}/>
+        <InfoArea info = { filteredInfo }/>
         <Footer />
     </div>
   );

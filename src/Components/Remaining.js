@@ -8,6 +8,7 @@ function Remaining (props) {
             
         }
     
+       
     return (
         <div>
             <span>Remaining: <span style = {{color: 'green'}}>{sumValue}$</span></span>

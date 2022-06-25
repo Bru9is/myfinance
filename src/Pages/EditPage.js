@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-export default function EditArea() {
+export default function EditPage() {
     const [title, setTitle] = useState("");
     const [value, setValue] = useState("");
     const [date, setDate] = useState(null);
@@ -36,8 +36,9 @@ export default function EditArea() {
       .put(`http://ironrest.herokuapp.com/myFinance/${id}`, data)
       .then((response) => alert("Item successfully updated!"))
       .catch((err) => console.log(err));
-    navigate("/homepage")
-  }
+     document.location = '/homepage'
+/*       navigate("/homepage")
+ */  }
 
   return (
     <div>

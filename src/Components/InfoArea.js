@@ -22,15 +22,19 @@ export default function InfoArea(props) {
   
   return (
     <div className="items">
-      <div className="item-header">
-        <div className="items-list">
+{/*       <div className="item-header">
+ */}      <div className="items-list headings">
           <span className="span"><b>Date</b></span>
           <span className="span"><b>Category</b></span>
           <span className="span"><b>Title</b></span>
           <span className="span"><b>Value</b></span>
         </div>
-      </div>
-      {props.info.map((item) => {
+{/*       </div>
+ */}      
+ 
+        {props.info.map((item) => {
+
+
         return (
           <div className="items-list">
             <ItemCard

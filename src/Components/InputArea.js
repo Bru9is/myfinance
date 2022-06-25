@@ -4,6 +4,7 @@ import './InputArea.css'
 import { useNavigate } from "react-router-dom";
 
 export default function InputArea(props) {
+
   const [title, setTitle] = useState("");
   const [value, setValue] = useState("");
   const [date, setDate] = useState(null);
@@ -24,8 +25,9 @@ export default function InputArea(props) {
     e.preventDefault();
     axios
         .post('http://ironrest.herokuapp.com/myFinance', data)
+        .then(() => {props.triggerRefresh()})
         .catch((err) => console.log(err));
-    sumValue += parseInt(data.value)
+        sumValue += parseInt(data.value)
   }
 
   return (
