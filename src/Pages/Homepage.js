@@ -41,7 +41,7 @@ function HomePage() {
   useEffect(() => {
     
     axios
-      .get("http://ironrest.herokuapp.com/myFinance")
+      .get("https://ironrest.herokuapp.com/myFinance")
       .then((response) => setInfo(response.data))
       .catch((err) => console.log(err));
   }, [refresh]);

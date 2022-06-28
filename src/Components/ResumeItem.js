@@ -10,7 +10,7 @@ export default function ResumeItem() {
 
   useEffect(() => {
     axios
-      .get(`http://ironrest.herokuapp.com/myFinance/${id}`)
+      .get(`https://ironrest.herokuapp.com/myFinance/${id}`)
       .then((response) => setItem(response.data))
       .catch((err) => console.log(err));
   }, []);

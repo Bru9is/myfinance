@@ -24,7 +24,7 @@ export default function InputArea(props) {
   function handleSubmit(e) {
     e.preventDefault();
     axios
-        .post('http://ironrest.herokuapp.com/myFinance', data)
+        .post('https://ironrest.herokuapp.com/myFinance', data)
         .then(() => {props.triggerRefresh()})
         .catch((err) => console.log(err));
         sumValue += parseInt(data.value)

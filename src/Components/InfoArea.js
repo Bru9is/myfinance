@@ -12,7 +12,7 @@ export default function InfoArea(props) {
     
   function deleteItem(_id) {
     axios
-      .delete(`http://ironrest.herokuapp.com/myFinance/${_id}`)
+      .delete(`https://ironrest.herokuapp.com/myFinance/${_id}`)
       .then(() => setRefresh(!refresh))
       .catch((e) => console.log(e));
   }
