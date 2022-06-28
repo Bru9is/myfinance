@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {  Link } from "react-router-dom";
 import './SignUp.css'
 
@@ -21,25 +21,23 @@ function SignUp(){
         setLastName(e.target.value);
         console.log('last name: ', lastName);
     }
+
+    useEffect(() => {
+        if ((email.localeCompare(emailConfirmed) === 0) &&  (emailConfirmed!=='')){
+        setIsConfirmed(true)
+        }
+        else setIsConfirmed(false)
+    },[emailConfirmed, email])
     
     const handleEmailInput = e => {
         setEmail(e.target.value);
-        console.log('typed email: ', email);
     }
 
     const handleEmailConfirmationInput = e => {
-        setEmailConfirmed(e.target.value);
-        console.log('confirmed email: ', emailConfirmed);
-        confirmEmail();
+/*         confirmEmail();
+ */        setEmailConfirmed(e.target.value);
         console.log('is confirmed? : ', isConfirmed);
 
-    }
-
-    function confirmEmail() {
-        if (email.localeCompare(emailConfirmed) === 0) {
-            setIsConfirmed(true)
-            return isConfirmed
-        }
     }
 
     const handlePasswordInput = e => {
@@ -49,6 +47,9 @@ function SignUp(){
         console.log('typed pw: ', e.target.value);
         console.log('Ís strong? ', isStrong)
     }
+
+    console.log('typed email: ', email);
+    console.log('confirmed email: ', emailConfirmed);
 
     return (
         <div className = 'signup-container'>

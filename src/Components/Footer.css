@@ -1,5 +1,5 @@
 .wrapper-footer{
-    position: fixed;
+    position:absolute;
     display: flex;
     align-items: flex-end;
     padding: 10px 10px 0px 0px;

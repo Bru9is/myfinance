@@ -9,16 +9,16 @@ import {FaGithub } from 'react-icons/fa'
 
 function AboutPage(){
     return(
-        <div>
+        <div className = 'about-wrapper'>
             <Navbar />
 
             <div className = 'about-container'>
-                <h1>About the project</h1>
+                <h1 className="align-left">About the project</h1>
                 <p>This project was created during the Ironhack Web Development Bootcamp in June 2022. 
                     The main objective is to help users track their incomes and expenses. 
                     <p><span style={{color: "#F5793B"}}>Technologies used in this project:</span> HTML, CSS, JavaScript, React, Bootstrap</p></p>
                 
-                <h1>About us</h1>
+                <h1 className="align-left">About us</h1>
                 <div className = 'flex-image-container'>
                     <img className="circular_image" src = {avatarBruno} alt = 'avatar Bruno'/>
                     <p>
