@@ -3,6 +3,8 @@ import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import './EditPage.css'
+import Navbar from "../Components/Navbar";
+import Footer from '../Components/Footer'
 
 export default function EditPage() {
     const [title, setTitle] = useState("");
@@ -42,7 +44,8 @@ export default function EditPage() {
  */  }
 
   return (
-    <div className="">
+    <div>
+      <Navbar />
       <h1 className="title">Edit item info</h1>
       <div className="edit-wrapper">
       <form className="item-creation" onSubmit={handleSubmit}>
@@ -99,6 +102,7 @@ export default function EditPage() {
       </div>
       
       <Link to = '/homepage' style = {{textAlign: 'center'}}>Back to the homepage</Link>
+      <Footer />
     </div>
   );
 }
