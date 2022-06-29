@@ -14,7 +14,7 @@ export default function EditPage() {
     const [info, setInfo] = useState({ title, value, date, category });
 
   const { id } = useParams();
-
+  
   useEffect(() => {
     axios
       .get(`https://ironrest.herokuapp.com/myFinance/${id}`)
@@ -38,10 +38,9 @@ export default function EditPage() {
     axios
       .put(`https://ironrest.herokuapp.com/myFinance/${id}`, data)
       .then((response) => alert("Item successfully updated!"))
+      .then(() => navigate("/homepage"))
       .catch((err) => console.log(err));
-     document.location = '/homepage'
-/*       navigate("/homepage")
- */  }
+   }
 
   return (
     <div>
