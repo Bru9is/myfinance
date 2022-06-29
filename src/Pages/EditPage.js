@@ -17,7 +17,7 @@ export default function EditPage() {
 
   useEffect(() => {
     axios
-      .get(`http://ironrest.herokuapp.com/myFinance/${id}`)
+      .get(`https://ironrest.herokuapp.com/myFinance/${id}`)
       .then((response) => {
         setInfo(response.data);
       })
@@ -36,7 +36,7 @@ export default function EditPage() {
 
     e.preventDefault();
     axios
-      .put(`http://ironrest.herokuapp.com/myFinance/${id}`, data)
+      .put(`https://ironrest.herokuapp.com/myFinance/${id}`, data)
       .then((response) => alert("Item successfully updated!"))
       .catch((err) => console.log(err));
      document.location = '/homepage'
