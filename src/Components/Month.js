@@ -1,7 +1,5 @@
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 import './Month.css'
-import { useState } from 'react'
-
 
 function Month (props) {
 

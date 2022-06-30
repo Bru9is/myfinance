@@ -14,12 +14,10 @@ function SignUp(){
 
     const handleFirstName = e => {
         setFirstName(e.target.value);
-        console.log('first name: ', firstName);
     }
 
     const handleLastName = e => {
         setLastName(e.target.value);
-        console.log('last name: ', lastName);
     }
 
     useEffect(() => {
@@ -34,23 +32,15 @@ function SignUp(){
     }
 
     const handleEmailConfirmationInput = e => {
-/*         confirmEmail();
- */        setEmailConfirmed(e.target.value);
-        console.log('is confirmed? : ', isConfirmed);
-
+        setEmailConfirmed(e.target.value);
     }
 
     const handlePasswordInput = e => {
         setPassword(e.target.value);
         var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
         if (re.test(e.target.value)) setIsStrong(true)
-        console.log('typed pw: ', e.target.value);
-        console.log('Ís strong? ', isStrong)
     }
-
-    console.log('typed email: ', email);
-    console.log('confirmed email: ', emailConfirmed);
-
+    
     return (
         <div className = 'signup-container'>
             <h1>Struggling with your budget planning?</h1>

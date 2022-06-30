@@ -1,11 +1,5 @@
-.items-list {
-    display: flex;
-    flex-direction: row;
+.headings {
     width: 94%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 auto;
 }
 
 .item-card >span {
@@ -22,8 +16,14 @@
     padding-bottom: 20px;
 }
 
-.headings {
+.items-list {
+    display: flex;
+    flex-direction: row;
     width: 94%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
 }
 
 .span-short {

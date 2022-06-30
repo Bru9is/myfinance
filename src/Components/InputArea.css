@@ -1,22 +1,9 @@
-.input-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 95%;
-    margin: 0 auto;
-}
-
 .add-button {
     width: 13%;
     background-color: rgba(245, 121, 59, 0.75);
     color: white;
     border-radius: 4px;
     margin: 5px;
-}
-
-.short-input {
-    width: 18%;
-    padding: 1px;
 }
 
 .add-button:hover {
@@ -29,4 +16,16 @@
     margin-top: -5px;
     margin-bottom: 0px;
     color: #F5793B;
+}.input-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
 }
+
+.short-input {
+    width: 18%;
+    padding: 1px;
+}
+

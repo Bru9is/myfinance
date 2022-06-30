@@ -1,4 +1,9 @@
-.wrapper-footer{
+.made-with-love {
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+    border-top: 2px solid rgba(0, 0, 0, 0.25);
+}.wrapper-footer{
     position:absolute;
     display: flex;
     align-items: flex-end;
@@ -13,9 +18,3 @@
     flex-shrink: 0;
 }
 
-.made-with-love {
-    width: 100%;
-    padding: 10px 0px;
-    text-align: center;
-    border-top: 2px solid rgba(0, 0, 0, 0.25);
-}
