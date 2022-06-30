@@ -26,7 +26,6 @@ function HomePage() {
           return myDate.getMonth() === month
       })
       setFilteredInfo(filteredData) 
-      console.log('Use effect check', month, info, filteredData)
 
   }, [info, month])
 
