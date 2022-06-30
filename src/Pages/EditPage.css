@@ -17,14 +17,13 @@
     width: 200px;
 }
 
-.sign-up-button, .white {
-    color: white;
-    margin-top: 50px;
-}
-
 .line-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
+.sign-up-button, .white {
+    color: white;
+    margin-top: 50px;
+}

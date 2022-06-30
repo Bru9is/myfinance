@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { FaInfoCircle, FaUserEdit, FaRegTrashAlt } from "react-icons/fa";
+import { FaUserEdit, FaRegTrashAlt } from "react-icons/fa";
 
 import ItemCard from "./ItemCard";
 import './InfoArea.css'
@@ -17,20 +17,17 @@ export default function InfoArea(props) {
       .catch((e) => console.log(e));
   }
   if (!props.info){
-    return <h1></h1>
+    return <h1>Loading...</h1>
   }
   
   return (
     <div className="items">
-{/*       <div className="item-header">
- */}      <div className="items-list headings">
+         <div className="items-list headings">
           <span className="span"><b>Date</b></span>
           <span className="span"><b>Category</b></span>
           <span className="span"><b>Title</b></span>
           <span className="span"><b>Value</b></span>
-        </div>
-{/*       </div>
- */}      
+        </div>    
  
         {props.info.map((item) => {
 
