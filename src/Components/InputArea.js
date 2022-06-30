@@ -25,7 +25,13 @@ export default function InputArea(props) {
     e.preventDefault();
     axios
         .post('https://ironrest.herokuapp.com/myFinance', data)
-        .then(() => {props.triggerRefresh()})
+        .then(() => {
+          props.triggerRefresh()
+          setTitle('')
+          setValue('')
+          setDate('')
+          setCategory('')
+        })
         .catch((err) => console.log(err));
         sumValue += parseInt(data.value)
   }
@@ -35,16 +41,20 @@ export default function InputArea(props) {
       <form className="new-input" onSubmit={handleSubmit}>
         <div className = 'input-wrapper'>
         <input
+          required
           value={title}
           name={title}
+          type = 'text'
           placeholder="Type an item you would like to add"
           onChange={(e) => setTitle(e.target.value)}
         />
 
         <input
+          required
           className = 'short-input'
           value={value}
           name={value}
+          type = 'number'
           placeholder="Value"
           onMouseEnter={() => setIsShown(true)}
           onMouseLeave={() => setIsShown(false)}
@@ -52,6 +62,7 @@ export default function InputArea(props) {
         />
 
         <input
+          required
           className='short-input'
           type="date"
           value={date}
@@ -61,8 +72,10 @@ export default function InputArea(props) {
         />
 
         <input
+          required
           value={category}
           name={category}
+          type = 'text'
           placeholder="Category"
           onChange={(e) => setCategory(e.target.value.toLowerCase())}
         />

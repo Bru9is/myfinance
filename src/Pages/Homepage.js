@@ -50,7 +50,6 @@ function HomePage() {
   }
   return (
     <div className="Homepage">
-      <Navbar />
       <div className = 'info-area' >
         <Month filterMonth = {filterMonth} info = { filteredInfo } currentMonth = {month}/>
         <Income info = { filteredInfo }/>
@@ -59,8 +58,7 @@ function HomePage() {
       </div>
 
         <InputArea triggerRefresh = {triggerRefresh}/>
-        <InfoArea info = { filteredInfo }/>
-        <Footer />
+        <InfoArea triggerRefresh = {triggerRefresh} info = { filteredInfo }/>
     </div>
   );
 }

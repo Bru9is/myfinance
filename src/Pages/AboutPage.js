@@ -10,8 +10,6 @@ import {FaGithub } from 'react-icons/fa'
 function AboutPage(){
     return(
         <div className = 'about-wrapper'>
-            <Navbar />
-
             <div className = 'about-container'>
                 <h1 className="align-left">About the project</h1>
                 <p>This project was created during the Ironhack Web Development Bootcamp in June 2022. 
@@ -55,7 +53,6 @@ function AboutPage(){
                     </p>
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }

@@ -33,11 +33,9 @@ button {
     flex-direction: row;
     justify-content: space-between;
     border-bottom: 2px solid rgba(0, 0, 0, 0.25);
-    /*position: fixed;*/
     font-size: 14px;
     margin-right: 5px;
     margin-left: 5px;
-    background-color: white;
 }
 
 .sign-up {
