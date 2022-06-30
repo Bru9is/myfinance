@@ -6,9 +6,7 @@ function SignUpPage(){
 
     return(
         <div>
-            <Navbar />
             <SignUp />
-            <Footer />
         </div>
     )
 }

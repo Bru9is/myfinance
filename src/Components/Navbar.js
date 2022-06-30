@@ -5,7 +5,7 @@ import './Navbar.css';
 import ThemeSwitcher from './ThemeSwitcher'
 
 
-function Navbar(){
+function Navbar(props){
 
     return (
         <div className = 'navbar'>
@@ -21,7 +21,7 @@ function Navbar(){
             <Link to="/">Sign Up</Link>
           </button>
           
-          <ThemeSwitcher />
+          <ThemeSwitcher changeTheme = {props.changeTheme}/>
           </div>
       </div>
       )

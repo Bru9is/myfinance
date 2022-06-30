@@ -44,7 +44,6 @@ export default function EditPage() {
 
   return (
     <div>
-      <Navbar />
       <h1 className="title">Edit item info</h1>
       <div className="edit-wrapper">
       <form className="item-creation" onSubmit={handleSubmit}>
@@ -101,7 +100,6 @@ export default function EditPage() {
       </div>
       
       <Link to = '/homepage' style = {{textAlign: 'center'}}>Back to the homepage</Link>
-      <Footer />
     </div>
   );
 }
