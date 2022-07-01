@@ -23,7 +23,7 @@ The main objective of the My Finance app is to help user better track personal e
 
 During this phase we set the product value propositions which helped us to define the future app functionality. Based on this, 9 user stories, an app basic structure and the wireframes have been created (using Miro and Figma). 
 
-![User Stories](./assets/images/user_stories_myfinance.png)
+![User Stories](./src/assets/images/user_stories_myfinance.png)
 
 ### 2. Development phase
 
@@ -40,7 +40,7 @@ HTML, CSS, JavaScript, React
 
 ## Screenshots
 
-![GIF](./assets/images/myfinance_gif.gif)
+![GIF](./src/assets/images/myfinance_gif.gif)
 
 ## Project Status
  
@@ -48,11 +48,11 @@ HTML, CSS, JavaScript, React
 
 ## Room for Improvement
 
-### 1. Create a year switcher to view the expenses for the whole year
-### 2. Create different category tags in different colours
-### 3. Implement a real sign up form
-### 4. Make the expenses display in red, and incomes in green in the items table
-### 5. Improve the colour theme for the dark mode
+#### 1. Create a year switcher to view the expenses for the whole year
+#### 2. Create different category tags in different colours
+#### 3. Implement a real sign up form
+#### 4. Make the expenses display in red, and incomes in green in the items table
+#### 5. Improve the colour theme for the dark mode
 
 ## Project Presentation
 
